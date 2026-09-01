@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #090a0f;
+    --text-base: #f3f4f6;
+    --card-bg: rgba(14, 17, 24, 0.85);
+    --border-color: rgba(255, 255, 255, 0.09);
+    --spider-crimson: #ff003c;
+    --spider-cyan: #00f0ff;
+    --spider-gold: #ffe600;
+    --spider-venom: #a855f7;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #090a0f;
+    color: #f3f4f6;
+    overflow-x: hidden;
+    font-family: var(--font-ubuntu), "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    selection-background-color: rgba(255, 0, 60, 0.3);
+    selection-color: #00f0ff;
+  }
+
+  ::selection {
+    background: rgba(255, 0, 60, 0.3);
+    color: #00f0ff;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff003c;
+}
+
+/* Clean Institutional Glass Panels */
+.glass-panel {
+  background: rgba(14, 17, 24, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.7);
+}
+
+.glass-panel-crimson {
+  background: rgba(255, 0, 60, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 0, 60, 0.25);
+}
+
+.glass-panel-venom {
+  background: rgba(168, 85, 247, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Hide default cursor only when TargetCursor is active */
+body.hide-cursor,
+body.hide-cursor * {
+  cursor: none !important;
+}
+
+/* Hanging Spider Gentle Sway Animation */
+@keyframes spiderSway {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(4deg) translateY(-2px);
+  }
+  75% {
+    transform: rotate(-4deg) translateY(2px);
+  }
+}
